@@ -27,7 +27,11 @@ function gewichtenFixer($array, $sum)
             unset($array[0]);
             $array = array_values($array);
             $tempArr = [];
-        } elseif(array_sum($array) == 0) print("Niet in balans");
+        } if(empty($array)) {
+            print("Niet in balans");
+            exit();
+        }
+        print_r($array);
     }
     print(implode(',', $tempArr));
 }
